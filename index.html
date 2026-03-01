@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artist Portfolio | Minimal Tech Edition</title>
+    <meta
+      name="description"
+      content="Minimalist modern art portfolio template with a high-end tech vibe."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise-overlay"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#home">YOUR NAME</a>
+      <nav>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero panel-glow">
+        <p class="eyebrow">COLLEGE PORTFOLIO 2026</p>
+        <h1>Minimalist art showcase with a cinematic tech edge.</h1>
+        <p>
+          Replace this intro with your artist-statement preview. Keep it short,
+          calm, and confident.
+        </p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn-primary">View Portfolio</a>
+          <a href="#contact" class="btn-secondary">Contact</a>
+        </div>
+      </section>
+
+      <section id="portfolio" class="portfolio-section">
+        <div class="section-heading">
+          <h2>Selected Works</h2>
+          <div class="filters" role="tablist" aria-label="Artwork categories">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="paper">Paper Paintings</button>
+            <button class="filter-btn" data-filter="digital">Digital</button>
+          </div>
+        </div>
+        <div id="art-grid" class="art-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="about" class="about panel-glow">
+        <h2>About the Artist</h2>
+        <p>
+          I explore memory, atmosphere, and motion through paintings on paper
+          and digital studies. My work combines tactile brushwork with
+          controlled modern composition.
+        </p>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Email: yourname@email.com</p>
+        <p>Instagram: @yourhandle</p>
+      </section>
+    </main>
+
+    <template id="art-card-template">
+      <article class="art-card panel-glow">
+        <img src="" alt="" loading="lazy" />
+        <div class="art-meta">
+          <h3></h3>
+          <p class="subtitle"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,231 @@
+:root {
+  --bg: #070b14;
+  --bg-soft: #0f1628;
+  --text: #f2f5ff;
+  --muted: #98a9d2;
+  --accent: #5cc8ff;
+  --accent-2: #9d7dff;
+  --card: rgba(15, 22, 40, 0.78);
+  --border: rgba(146, 173, 255, 0.24);
+  --glow: rgba(92, 200, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  background: radial-gradient(circle at 20% 0%, #1c2f57 0%, var(--bg) 45%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.noise-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: 0.05;
+  background-image: radial-gradient(#ffffff 0.4px, transparent 0.4px);
+  background-size: 3px 3px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5vw;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 11, 20, 0.72);
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 1.2rem;
+  transition: color 0.25s ease;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+main {
+  width: min(1100px, 92vw);
+  margin: 2.5rem auto 4rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Syne", "Space Grotesk", sans-serif;
+  line-height: 1.2;
+}
+
+.hero {
+  padding: 3rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 3.8vw, 3.5rem);
+  max-width: 17ch;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+.hero-actions {
+  margin-top: 1.4rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  text-decoration: none;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+
+.btn-primary {
+  color: #021019;
+  background: linear-gradient(95deg, var(--accent), #b5f4ff);
+}
+
+.btn-secondary {
+  color: var(--text);
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.section-heading {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.art-card {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.art-card img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.art-meta {
+  padding: 0.9rem;
+}
+
+.art-meta h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.subtitle {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.about,
+.contact {
+  margin-top: 3rem;
+  padding: 2rem;
+}
+
+.panel-glow {
+  border: 1px solid var(--border);
+  background: linear-gradient(155deg, var(--card), rgba(9, 16, 31, 0.66));
+  border-radius: 1rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 35px -20px var(--glow);
+}
+
+/* Subtle hover effect for cards */
+.art-card:hover {
+  transform: translateY(-4px);
+  transition: transform 240ms ease;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  nav a {
+    margin: 0 0.55rem;
+  }
+
+  .hero,
+  .about,
+  .contact {
+    padding: 1.3rem;
+  }
+}
